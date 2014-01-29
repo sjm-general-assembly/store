@@ -1,0 +1,27 @@
+<h2>Product</h2>
+<div class='col-md-3'>
+<form role="form">
+	<fieldset disabled>
+		<div class="form-group">
+    	  <label for="inputDisplayID">ID</label>
+    	  <input type="text" class="form-control" id="inputDisplayID" placeholder="<%= @product.id %>">
+  		</div>
+		<div class="form-group">
+    	  <label for="inputDisplayName">Name</label>
+    	  <input type="text" class="form-control" id="inputDisplayName" placeholder="<%= @product.name %>">
+  		</div>
+		<div class="form-group">
+    	  <label for="inputDisplayPrice">Price</label>
+    	  <input type="text" class="form-control" id="inputDisplayPrice" placeholder="<%= number_to_currency(@product.price) %>">
+  		</div>
+		<div class="form-group">
+    	  <label for="inputDisplayCategories">Categories</label>
+	  	  <select name="category_id" id="inputDisplayCategories" class="form-control" size=8>
+          <% @product.categories.each do |category| %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+          <% end %>
+          </select>
+  		</div>
+	</fieldset>
+</form>
+</div>
